@@ -1,6 +1,8 @@
 <template>
-  <Popover class="absolute bottom-5 right-5">
-    <PopoverPanel>Hello World</PopoverPanel>
+  <Popover
+    class="absolute bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end"
+  >
+    <PopoverPanel><WidgetForm /></PopoverPanel>
 
     <PopoverButton
       class="bg-brand-500 rounded-full px-3 h-12 text-white flex items-center group"
@@ -19,6 +21,7 @@
 
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
+import WidgetForm from "./WidgetForm/index.vue";
 </script>
 
 <style scoped></style>
