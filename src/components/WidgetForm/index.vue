@@ -1,13 +1,20 @@
 <template>
-  <div></div>
+  <div
+    class="bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto"
+  >
+    <footer></footer>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref } from "vue";
 
 import bugImageUrl from "@/assets/bug.svg";
 import ideaImageUrl from "@/assets/idea.svg";
 import otherImageUrl from "@/assets/other.svg";
+import FeedbackSucessStep from "./Steps/FeedbackSuccessStep.vue";
+import FeedbackTypeStep from "./Steps/FeedbackTypeStep.vue";
+import FeedbackContentStep from "./Steps/FeedbackContentStep.vue";
 
 type FeedbackType = keyof typeof feedbackTypes;
 
