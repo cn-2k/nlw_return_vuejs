@@ -25,7 +25,7 @@
 
     <button
       type="button"
-      @click="onFeedbackRestartRequested"
+      @click="$emit('onFeedbackRestartRequested')"
       class="py-2 px-6 mt-6 bg-zinc-800 rounded-md border-transparent text-sm leading-6 hover:bg-zinc-700 transition-colors focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none"
     >
       Quero enviar outro
@@ -33,15 +33,12 @@
   </div>
 </template>
 
-<script lang="ts">
-interface FeedbackSuccessStepProps {
-  onFeedbackRestartRequested: () => void;
-}
-</script>
-
 <script setup lang="ts">
 import CloseButton from "@/components/CloseButton.vue";
-defineProps<FeedbackSuccessStepProps>();
+
+defineEmits<{
+  (e: "onFeedbackRestartRequested"): void;
+}>();
 </script>
 
 <style scoped></style>

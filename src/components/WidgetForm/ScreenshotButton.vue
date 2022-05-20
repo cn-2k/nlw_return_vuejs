@@ -11,60 +11,33 @@
   <button
     v-if="screenshot"
     type="button"
-    class="p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end text-zinc-400 hover:text-zinc-100 transition-colors"
+    class="bg-cover p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end text-zinc-400 hover:text-zinc-100 transition-colors"
     @click="$emit('onSreenshotTook', null)"
     :style="{
       backgroundImage: `url(${screenshot})`,
-      backgroundPosition: 'right bottom',
-      backgroundSize: 180,
     }"
   >
     <PhTrash weigth="fill" />
   </button>
 </template>
 
-<!-- <script lang="ts">
-// check: https://github.com/johnsoncodehk/volar/issues/1232
-interface ScreenshotButtonProps {
-  screenshot: string | null;
-  onSreenshotTook: (screenshot: string | null) => void;
-}
-</script> -->
-
 <script setup lang="ts">
 import { ref } from "vue";
 import Loading from "../Loading.vue";
 import html2canvas from "html2canvas";
 
-/******* A WAY TS */
-// const props = defineProps({
-//   screenshot: {
-//     type: String || null,
-//   },
-//   onSreenshotTook: { type: Function, default: () => [] },
-// });
-
-/******* ANOTHER WAY TS */
 defineProps<{
   screenshot: string | null;
-  // onSreenshotTook: (screenshot: string | null) => void;
 }>();
-
-// const props = defineProps<ScreenshotButtonProps>();
 
 const emits = defineEmits<{
   (e: "onSreenshotTook", value: string | null): void;
 }>();
 
-// const onSreenshotTook = (value: string | null): void => {
-//   emits("onSreenshotTook", value);
-// };
+const isTakingScreenshot = ref<boolean>(false);
 
-const isTakingScreenshot = ref(false);
-
-const handleTakeScreenshot = async () => {
+const handleTakeScreenshot = async (): Promise<void> => {
   isTakingScreenshot.value = true;
-  // check: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-non-null-assertion.md
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const canvas = await html2canvas(document.querySelector("html")!);
   const base64image = canvas.toDataURL("image/png");

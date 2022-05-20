@@ -3,7 +3,7 @@
     <button
       type="button"
       class="top-5 left-5 absolute text-zinc-400 hover:text-zinc-100"
-      @click="onFeedbackRestartRequested"
+      @click="$emit('onFeedbackRestartRequested')"
     >
       <PhArrowLeft weight="bold" class="w-4 h-4" />
     </button>
@@ -42,54 +42,36 @@
   </form>
 </template>
 
-<script lang="ts">
-// interface FeedbackContentStepProps {
-//   feedbackType: FeedbackType;
-//   onFeedbackRestartRequested: () => void;
-//   onFeedbackSent: () => void;
-// }
-</script>
-
 <script setup lang="ts">
 import { ref, type PropType } from "vue";
 import { feedbackTypes, type FeedbackType } from "../index.vue";
 import ScreenshotButton from "../ScreenshotButton.vue";
 import CloseButton from "@/components/CloseButton.vue";
 
-// const props = defineProps<FeedbackContentStepProps>();
-
 const props = defineProps({
   feedbackType: {
     type: [String, Object, Array] as PropType<FeedbackType | null>,
     required: true,
   },
-  onFeedbackSent: {
-    type: Function as PropType<() => void>,
-    required: true,
-  },
 });
 
 const screenshot = ref<string | null>(null);
-const comment = ref("");
+const comment = ref<string>("");
 
 const feedbackTypeInfo = feedbackTypes[props.feedbackType as FeedbackType]; // 👈️ type assertion
 
 const emits = defineEmits<{
   (e: "onFeedbackRestartRequested"): void;
-  // (e: 'update', value: string): void
+  (e: "onFeedbackSent"): void;
 }>();
 
-const onFeedbackRestartRequested = () => {
-  emits("onFeedbackRestartRequested");
-};
-
-function handleSubmitFeedback() {
+function handleSubmitFeedback(): void {
   console.log({
     screenshot,
     comment,
   });
 
-  props.onFeedbackSent();
+  emits("onFeedbackSent");
 }
 </script>
 

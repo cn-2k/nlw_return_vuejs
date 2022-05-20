@@ -1,6 +1,6 @@
 <template>
   <Popover
-    class="absolute bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end"
+    class="fixed bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end"
   >
     <PopoverPanel><WidgetForm /></PopoverPanel>
 

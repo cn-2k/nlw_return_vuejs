@@ -3,17 +3,17 @@
     class="bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto"
   >
     <FeedbackSucessStep
-      :onFeedbackRestartRequested="() => handleRestartFeedback"
+      @onFeedbackRestartRequested="() => handleRestartFeedback()"
       v-if="feedbackSent"
     />
     <FeedbackTypeStep
-      @on-feedback-type-changed="(key) => (feedbackType = key)"
+      @onFeedbackTypeChanged="(key) => (feedbackType = key)"
       v-else-if="!feedbackType"
     />
     <FeedbackContentStep
       :feedbackType="feedbackType"
-      @on-feedback-restart-requested="() => handleRestartFeedback()"
-      :onFeedbackSent="() => (feedbackSent = true)"
+      @onFeedbackRestartRequested="() => handleRestartFeedback()"
+      @onFeedbackSent="() => (feedbackSent = true)"
       v-else
     />
     <footer class="text-xs text-neutral-400">
@@ -68,9 +68,9 @@ import FeedbackTypeStep from "./Steps/FeedbackTypeStep.vue";
 import FeedbackContentStep from "./Steps/FeedbackContentStep.vue";
 
 const feedbackType = ref<FeedbackType | null>(null);
-const feedbackSent = ref(false);
+const feedbackSent = ref<boolean>(false);
 
-const handleRestartFeedback = () => {
+const handleRestartFeedback = (): void => {
   feedbackSent.value = false;
   feedbackType.value = null;
 };
