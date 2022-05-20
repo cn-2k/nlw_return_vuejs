@@ -1,5 +1,6 @@
 <template>
   <button
+    v-if="!screenshot"
     type="button"
     @click="handleTakeScreenshot"
     class="p-2 bg-zinc-800 rounded-md border-transparent hover:bg-zinc-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500"
@@ -11,7 +12,7 @@
     v-if="screenshot"
     type="button"
     class="p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end text-zinc-400 hover:text-zinc-100 transition-colors"
-    @click="onSreenshotTook(null)"
+    @click="$emit('onSreenshotTook', null)"
     :style="{
       backgroundImage: `url(${screenshot})`,
       backgroundPosition: 'right bottom',
@@ -52,12 +53,12 @@ defineProps<{
 // const props = defineProps<ScreenshotButtonProps>();
 
 const emits = defineEmits<{
-  (e: "onSreenshotTook", screeshot: string | null): void;
+  (e: "onSreenshotTook", value: string | null): void;
 }>();
 
-const onSreenshotTook = (screenshot: string | null): void => {
-  emits("onSreenshotTook", screenshot);
-};
+// const onSreenshotTook = (value: string | null): void => {
+//   emits("onSreenshotTook", value);
+// };
 
 const isTakingScreenshot = ref(false);
 

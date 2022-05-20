@@ -16,7 +16,7 @@
       />
       {{ feedbackTypeInfo.title }}
     </span>
-    <PhX />
+    <CloseButton />
   </header>
 
   <form @submit.prevent="handleSubmitFeedback" class="my-4 w-full">
@@ -29,7 +29,7 @@
     <footer class="flex gap-2 mt-2">
       <ScreenshotButton
         :screenshot="screenshot"
-        @on-screenshot-took="screenshot"
+        @onSreenshotTook="(value) => (screenshot = value)"
       />
       <button
         type="submit"
@@ -54,6 +54,7 @@
 import { ref, type PropType } from "vue";
 import { feedbackTypes, type FeedbackType } from "../index.vue";
 import ScreenshotButton from "../ScreenshotButton.vue";
+import CloseButton from "@/components/CloseButton.vue";
 
 // const props = defineProps<FeedbackContentStepProps>();
 
