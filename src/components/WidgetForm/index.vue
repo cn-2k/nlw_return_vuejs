@@ -17,13 +17,13 @@
       v-else
     />
     <footer class="text-xs text-neutral-400">
-      Feito com ♥ pela
+      Feito com ♥ por
       <a
         class="underline underline-offset-2"
-        href="https://rocketseat.com.br"
+        href="https://github.com/caio-2k/"
         target="_blank"
       >
-        Rocketseat
+        Caio Vinicius
       </a>
     </footer>
   </div>
