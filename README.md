@@ -1,59 +1,88 @@
-# nlw_return_vue
+<p align="center">
+    <img alt="Git Explorer" src="./.github/Capa.png"/>
+</p>
 
-This template should help get you started developing with Vue 3 in Vite.
+<h1 align="center">
+	NLW Return Impulse by Rockeseat - Vue.JS Version by Caio Vinicius
+</h1>
 
-## Recommended IDE Setup
+<p align="center">Font-end da Trilha Impulse do Evento Next Level Week Return realizado utilizando Vue.JS.</p>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+<p align="center">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-2ecc71">
 
-## Type Support for `.vue` Imports in TS
+  <a href="https://github.com/caio-2k">
+    <img alt="Made by Caio Vinicius" src="https://img.shields.io/badge/Made%20by-Caio%20Vinicius-2ecc71">
+  </a>
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+  <a href="https://www.linkedin.com/in/caio-2k/" target="_blank">
+    <img alt="Follow me Linkedin" src="https://img.shields.io/badge/Follow%20up-caiovinicius-2ecc71?style=social&logo=linkedin">
+  </a>
+</p>
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## 🚀 Projeto
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Um Component Widget para feedback que pode ser utilizado em qualquer site.
+<br />
+Projeto no ar: http://nlw-return-vuejs.vercel.app/
 
-## Customize configuration
+## 🔧 Tecnologias
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Vite
+- TailWindCSS
+- VueJS
+- Typescript
+- Axios
+- ESLint + Prettier + EditorConfig;
+- VS Code
 
-## Project Setup
+## 🚀 Instalando e executando o projeto
 
-```sh
-npm install
-```
+Para executar o projeto localmente na sua máquina, siga as seguintes etapas:
 
-### Compile and Hot-Reload for Development
+### Pré-requisitos
 
-```sh
-npm run dev
-```
+Para instalar as dependências necessárias do projeto, utilize o yarn, para instala-lo, execute o seguinte comando:
 
-### Type-Check, Compile and Minify for Production
+  ```sh
+  npm install --global yarn
+  ```
 
-```sh
-npm run build
-```
+### Instalação
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Siga as etapas seguintes para instalar e executar o projeto:
 
-```sh
-npm run test:unit
-```
+1. Clone o repositório
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+   ```sh
+   git clone https://github.com/caio-2k/nlw_return_vuejs.git
+   ```
+2. Instale as dependências do projeto
 
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
-```
+   ```sh
+   yarn install
+   ```
+3. Altere o nome da variável ambiente `env.local` para `.env` e informe a BASEURL da sua API
 
-### Lint with [ESLint](https://eslint.org/)
+   ```js
+   const VITE_API_URL = 'INSIRA A BASEURL DA SUA API';
+   ```
+   
+4. Execute o projeto em servidor de desenvolvimento:
 
-```sh
-npm run lint
-```
+ ```js
+   yarn dev
+   ``` 
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Adicionar responsividade
+- [ ] Validação de campos
+- [ ] Adicionar mensagens de erro
+- [ ] Adicionar testes unitários (Vitest)
+- [ ] Adicionar testes e2e (Cypress)
+
+Feito com ♥ by [Caio Vinicius](https://www.linkedin.com/in/caio-2k/)
+
+[⬆ Voltar ao topo](#-projeto)<br>
