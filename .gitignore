@@ -28,4 +28,4 @@ coverage
 *.sw?
 
 #ENV
-.env.local
+.env

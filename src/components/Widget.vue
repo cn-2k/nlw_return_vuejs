@@ -2,10 +2,11 @@
   <Popover
     class="fixed bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end"
   >
-    <PopoverPanel><WidgetForm /></PopoverPanel>
+    <PopoverPanel id="widget-popover"><WidgetForm /></PopoverPanel>
 
     <PopoverButton
       class="bg-brand-500 rounded-full px-3 h-12 text-white flex items-center group"
+      id="widget-button"
     >
       <PhChatTeardropDots class="w-6 h-6" />
 
