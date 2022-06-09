@@ -1,5 +1,6 @@
 <template>
   <button
+    id="screenshot-button"
     v-if="!screenshot"
     type="button"
     @click="handleTakeScreenshot"

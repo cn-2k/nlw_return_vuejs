@@ -6,6 +6,7 @@
     </header>
     <div class="flex py-8 gap-2 w-full">
       <button
+        id="feedback-type-button"
         v-for="(value, key) in feedbackTypes"
         :key="key"
         type="button"
