@@ -67,7 +67,6 @@ describe("Widget", () => {
       body: {
         type: 'BUG',
         comment: 'Está tudo bugado!',
-        screenshot: 'asdasfcasfasfa',
       }
     })
 
