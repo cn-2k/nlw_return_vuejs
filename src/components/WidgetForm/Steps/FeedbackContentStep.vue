@@ -1,5 +1,5 @@
 <template>
-  <section id="feedback-type-content">
+  <div class="flex flex-col items-center" id="feedback-type-content">
     <header>
       <button
         type="button"
@@ -44,7 +44,7 @@
         </button>
       </footer>
     </form>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
