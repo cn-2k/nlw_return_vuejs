@@ -77,7 +77,7 @@ Siga as etapas seguintes para instalar e executar o projeto:
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Adicionar responsividade
+- [X] Adicionar responsividade
 - [ ] Validação de campos
 - [ ] Adicionar mensagens de erro
 - [ ] Adicionar testes unitários (Vitest)
