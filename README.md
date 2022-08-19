@@ -82,7 +82,7 @@ Siga as etapas seguintes para instalar e executar o projeto:
 - [ ] Adicionar mensagens de erro
 - [ ] Adicionar testes unitários (Vitest)
 - [X] Adicionar testes e2e (Cypress)
-- [] Adicionar gerenciamento de estado (Pinia)
+- [X] Adicionar gerenciamento de estado (Pinia)
 
 Feito com ♥ by [Caio Vinicius](https://www.linkedin.com/in/caio-2k/)
 
