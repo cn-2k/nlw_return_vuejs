@@ -33,8 +33,8 @@ Projeto no ar: http://nlw-return-vuejs.vercel.app/
 - VueJS
 - Typescript
 - Axios
-- ESLint + Prettier + EditorConfig;
-- VS Code
+- Cypress
+- Pinia
 
 ## 🚀 Instalando e executando o projeto
 
